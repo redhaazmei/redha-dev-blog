@@ -5,6 +5,11 @@ const config = {
   useSystemColorMode: false,
 };
 
+const fonts = {
+  heading: "DM Serif Display",
+  body: "DM Sans",
+};
+
 const colors = {
   brand: {
     50: "#EFF6FF",
@@ -32,5 +37,5 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ config, colors });
+const theme = extendTheme({ config, fonts, colors });
 export default theme;
