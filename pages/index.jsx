@@ -1,4 +1,5 @@
-import { Heading } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
+import Layout from "components/Layout";
 import Head from "next/head";
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
         <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
         <link rel="manifest" href="favicon/site.webmanifest" />
       </Head>
-      <Heading color="brand.700">Welcome to my blog!</Heading>
+      <Layout />
     </>
   );
 };
