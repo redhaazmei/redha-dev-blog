@@ -1,4 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
+import "focus-visible/dist/focus-visible";
 import theme from "./theme";
 import CustomFonts from "./fonts";
 
