@@ -6,8 +6,16 @@ const config = {
 };
 
 const fonts = {
-  heading: "Inter",
-  body: "Inter",
+  heading: `"Inter", sans-serif`,
+  body: `"Inter", sans-serif`,
+};
+
+const styles = {
+  global: {
+    "html, body": {
+      lineHeight: "tall",
+    },
+  },
 };
 
 const colors = {
@@ -37,5 +45,5 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ config, fonts, colors });
+const theme = extendTheme({ config, fonts, colors, styles });
 export default theme;

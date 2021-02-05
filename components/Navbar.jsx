@@ -1,19 +1,26 @@
-import { Box, Flex, Heading, IconButton, Stack, useColorMode } from "@chakra-ui/react";
-import { FiSun } from "react-icons/fi";
+import Link from "next/link";
+import { Box, Flex, IconButton, Stack, useColorMode } from "@chakra-ui/react";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const links = ["Home", "About", "Blog", "Projects"];
 
   return (
     <>
       <Flex as="nav" align="center" justify="space-between" my="5">
-        <Stack direction="row" py="5" spacing="5">
-          <Box>Home</Box>
-          <Box>About</Box>
-          <Box>Blog</Box>
-          <Box>Projects</Box>
+        <Stack direction="row" py="5" spacing={["3", "5"]}>
+          {links.map((link) => {
+            return (
+              <Box fontSize={["md", "md"]} _hover={{ color: "#396afc" }}>
+                <Link id={link} href={link === "Home" ? "/" : `/${link.toLowerCase()}`}>
+                  <a>{link}</a>
+                </Link>
+              </Box>
+            );
+          })}
         </Stack>
-        <IconButton colorScheme="purple" variant="outline" aria-label="dark-mode-toggle" icon={<FiSun />} onClick={toggleColorMode} />
+        <IconButton variant="solid" aria-label="dark-mode-toggle" icon={colorMode === "dark" ? <FiSun /> : <FiMoon />} onClick={toggleColorMode} />
       </Flex>
     </>
   );

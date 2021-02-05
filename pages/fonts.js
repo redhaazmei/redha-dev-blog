@@ -8,6 +8,13 @@ const fontlist = `
     font-display: swap;
     src: url(/fonts/Inter-Regular.ttf) format("ttf");
   }
+  @font-face {
+    font-family: "Inter";
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Inter-Bold.ttf) format("ttf");
+  }
 `;
 
 const CustomFonts = () => {
