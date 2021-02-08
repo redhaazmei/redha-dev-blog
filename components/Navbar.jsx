@@ -12,7 +12,7 @@ const Navbar = () => {
         <Stack direction="row" py="5" spacing={["3", "5"]}>
           {links.map((link) => {
             return (
-              <Box fontSize={["md", "md"]} _hover={{ color: "#396afc" }}>
+              <Box fontSize={["md", "md"]} _hover={{ color: "blue.300" }}>
                 <Link id={link} href={link === "Home" ? "/" : `/${link.toLowerCase()}`}>
                   <a>{link}</a>
                 </Link>
