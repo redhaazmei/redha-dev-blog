@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "components/Layout";
 import Author from "components/Author";
+import Project from "components/Project";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       </Head>
       <Layout>
         <Author />
+        <Project />
       </Layout>
     </>
   );
