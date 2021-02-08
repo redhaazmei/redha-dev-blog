@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Flex, Stack, Text, Icon, Divider } from "@chakra-ui/react";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
