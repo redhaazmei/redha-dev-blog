@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Box, Flex, IconButton, Stack, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
         <Stack direction="row" py="5" spacing={["3", "5"]}>
           {links.map((link) => {
             return (
-              <Box fontSize={["md", "md"]} _hover={{ color: "blue.300" }}>
+              <Box fontSize={["md", "md"]} _hover={{ color: useColorModeValue("brand.darkblue", "brand.lightblue") }}>
                 <Link id={link} href={link === "Home" ? "/" : `/${link.toLowerCase()}`}>
                   <a>{link}</a>
                 </Link>
