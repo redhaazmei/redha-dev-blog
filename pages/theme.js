@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, propNames } from "@chakra-ui/react";
 
 const config = {
   initialColorMode: "light",
@@ -11,12 +11,26 @@ const fonts = {
 };
 
 const styles = {
-  global: {
+  global: (props) => ({
     "html, body": {
       lineHeight: "tall",
     },
-  },
+    h1: {
+      letterSpacing: "tight",
+    },
+    p: {
+      color: props.colorMode === "dark" ? "gray.400" : "gray.600",
+    },
+  }),
 };
+
+// const styles = {
+//   global: {
+//     "html, body": {
+//       lineHeight: "tall",
+//     },
+//   },
+// };
 
 const colors = {
   brand: {
