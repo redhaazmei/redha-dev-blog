@@ -1,4 +1,4 @@
-import { Flex, Stack, Text, Icon, Divider } from "@chakra-ui/react";
+import { Flex, Stack, Text, Icon, Divider, useColorModeValue } from "@chakra-ui/react";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
           {socials.map((social) => {
             return (
               <a key={social.site} href={social.href} target="_blank" rel="noopener noferrer">
-                <Icon as={social.icon} w="5" h="5" _hover={{ color: "blue.300" }} />
+                <Icon as={social.icon} w="5" h="5" _hover={{ color: useColorModeValue("brand.darkblue", "brand.lightblue") }} />
               </a>
             );
           })}
