@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <>
-      <Divider pt="10" />
+      <Divider pt="2" />
       <Flex as="footer" direction={["column-reverse", "row"]} align="center" justify="space-between" my="8">
         <Text as="h6" fontSize="xs" py="5">
           &copy; {new Date().getFullYear()} Redha Azmei. All Rights Reserved.
@@ -30,7 +30,7 @@ const Footer = () => {
         <Stack direction="row" spacing="3">
           {socials.map((social) => {
             return (
-              <a href={social.href} target="_blank" rel="noopener noferrer">
+              <a key={social.site} href={social.href} target="_blank" rel="noopener noferrer">
                 <Icon as={social.icon} w="5" h="5" _hover={{ color: "blue.300" }} />
               </a>
             );

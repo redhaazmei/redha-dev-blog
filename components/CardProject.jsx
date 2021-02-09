@@ -1,19 +1,19 @@
 import { Box, Flex, Heading, Text, useColorModeValue, SimpleGrid, Stack, Link } from "@chakra-ui/react";
 import { FiExternalLink } from "react-icons/fi";
 import projects from "data/projects";
+import { gradientLeft, gradientRight } from "components/Gradient";
 
 const CardProject = () => {
-  const gradientRight = "linear(to-r, brand.lightblue, brand.darkblue)";
-  const gradientLeft = "linear(to-l, brand.lightblue, brand.darkblue)";
   return (
     <>
       <SimpleGrid columns={[1, 2]} spacing="6">
         {projects.map((project) => {
           return (
-            <Box minH="8em" w="100%" bg={useColorModeValue("gray.200", "gray.700")} p="4">
-              <Flex direction="row" mb="2">
+            <Box key={project.title} minH="8em" w="100%" bg={useColorModeValue("gray.200", "gray.900")} p="4">
+              <Flex direction="row" mb="3">
                 <Box>
-                  <Heading size="sm" bgGradient={useColorModeValue(gradientLeft, gradientRight)} bgClip="text">
+                  {/* <Heading size="sm" bgGradient={useColorModeValue(gradientLeft, gradientRight)} bgClip="text"> */}
+                  <Heading size="sm" color={useColorModeValue("brand.darkblue", "brand.lightblue")}>
                     {project.title}
                   </Heading>
                   <Text fontSize="sm">{project.description}</Text>
@@ -22,14 +22,19 @@ const CardProject = () => {
                   {project.year}
                 </Heading>
               </Flex>
-              <Stack direction="row" spacing="4">
-                <Link fontSize="sm" href="https://chakra-ui.com" isExternal>
-                  Website <FiExternalLink />
-                </Link>
-                <Link fontSize="sm" href="https://chakra-ui.com" isExternal>
-                  Github
-                  <FiExternalLink display="inline" />
-                </Link>
+              <Stack fontSize="sm" direction="row" spacing="4">
+                <Box display="flex" alignItems="center">
+                  <Link href={project.website} mr="1" isExternal>
+                    Website
+                  </Link>
+                  <FiExternalLink />
+                </Box>
+                <Box display="flex" alignItems="center">
+                  <Link href={project.github} mr="1" isExternal>
+                    Github
+                  </Link>
+                  <FiExternalLink />
+                </Box>
               </Stack>
             </Box>
           );

@@ -1,20 +1,15 @@
-import Head from "next/head";
 import Layout from "components/Layout";
 import Author from "components/Author";
 import Project from "components/Project";
+import CustomHead from "components/CustomHead";
 
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>redha.dev</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
-        <link rel="manifest" href="favicon/site.webmanifest" />
-      </Head>
+      <CustomHead title="Redha Azmei" />
       <Layout>
         <Author />
+        <Project />
         <Project />
       </Layout>
     </>

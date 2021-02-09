@@ -4,7 +4,7 @@ import CardProject from "./CardProject";
 const Project = () => {
   return (
     <>
-      <Box>
+      <Box mb="12">
         <Box mb="4">
           <Heading letterSpacing="tight">Projects</Heading>
           <Text>List of projects and involvements.</Text>
