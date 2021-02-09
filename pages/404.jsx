@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <CustomHead title="404 | Redha Azmei" />
       <Layout>
-        <Flex justify="center">
+        <Flex justify="center" mb="4">
           <Flex textAlign="center" maxW="2xl" direction="column" align="center" justify="center">
             <Heading as="h1" size="4xl">
               404 Error
