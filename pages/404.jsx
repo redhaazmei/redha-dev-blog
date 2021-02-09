@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Layout from "components/Layout";
 import { gradientLeft, gradientRight } from "components/Gradient";
-import { Button, Flex, Heading, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import { FiHome } from "react-icons/fi";
 import CustomHead from "components/CustomHead";
 

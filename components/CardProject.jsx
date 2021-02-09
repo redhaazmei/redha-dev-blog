@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Text, useColorModeValue, SimpleGrid, Stack, Link } from "@chakra-ui/react";
 import { FiExternalLink } from "react-icons/fi";
 import projects from "data/projects";
-import { gradientLeft, gradientRight } from "components/Gradient";
 
 const CardProject = () => {
   return (
@@ -9,11 +8,10 @@ const CardProject = () => {
       <SimpleGrid columns={[1, 2]} spacing="6">
         {projects.map((project) => {
           return (
-            <Box key={project.title} minH="8em" w="100%" bg={useColorModeValue("gray.200", "gray.900")} p="4">
+            <Box key={project.title} minH="8em" w="100%" bg={useColorModeValue("gray.200", "gray.900")} p="4" role="group">
               <Flex direction="row" mb="3">
                 <Box>
-                  {/* <Heading size="sm" bgGradient={useColorModeValue(gradientLeft, gradientRight)} bgClip="text"> */}
-                  <Heading size="sm" color={useColorModeValue("brand.darkblue", "brand.lightblue")}>
+                  <Heading size="sm" _groupHover={{ color: useColorModeValue("brand.darkblue", "brand.lightblue") }}>
                     {project.title}
                   </Heading>
                   <Text fontSize="sm">{project.description}</Text>
