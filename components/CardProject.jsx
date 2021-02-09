@@ -16,7 +16,7 @@ const CardProject = () => {
                   </Heading>
                   <Text fontSize="sm">{project.description}</Text>
                 </Box>
-                <Heading fontSize="sm" ml="auto">
+                <Heading fontSize="sm" ml="auto" pl="4">
                   {project.year}
                 </Heading>
               </Flex>
