@@ -6,8 +6,8 @@ const Blog = () => {
     <>
       <Box mb="12">
         <Box mb="4">
-          <Heading letterSpacing="tight">Blog Posts</Heading>
-          <Text>I write about stuffs and technologies I learn, covering Data Science, ML, AI and Web Development.</Text>
+          <Heading letterSpacing="tight">Blog</Heading>
+          <Text>Documenting stuffs that I find interesting</Text>
         </Box>
         <CardBlog />
       </Box>
