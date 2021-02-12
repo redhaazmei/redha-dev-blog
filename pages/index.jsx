@@ -8,11 +8,9 @@ const Home = () => {
   return (
     <>
       <CustomHead title="Redha Azmei" />
-      <Layout>
-        <Author />
-        <Project />
-        <Blog />
-      </Layout>
+      <Author />
+      <Project />
+      <Blog />
     </>
   );
 };
