@@ -31,7 +31,7 @@ const Footer = () => {
           {socials.map((social) => {
             return (
               <a key={social.site} href={social.href} target="_blank" rel="noopener noferrer">
-                <Icon as={social.icon} w="5" h="5" _hover={{ color: useColorModeValue("brand.darkblue", "brand.lightblue") }} />
+                <Icon as={social.icon} w="5" h="5" _hover={{ color: "brand.red" }} />
               </a>
             );
           })}
