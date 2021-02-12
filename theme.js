@@ -6,13 +6,14 @@ const config = {
 };
 
 const fonts = {
-  heading: `"Inter", sans-serif`,
-  body: `"Inter", sans-serif`,
+  heading: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  body: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
 };
 
 const styles = {
   global: (props) => ({
     "html, body": {
+      bg: props.colorMode === "dark" ? "brand.darkpurple" : "white",
       lineHeight: "tall",
     },
     h1: {
@@ -24,28 +25,15 @@ const styles = {
   }),
 };
 
-// const styles = {
-//   global: {
-//     "html, body": {
-//       lineHeight: "tall",
-//     },
-//   },
-// };
-
 const colors = {
   brand: {
-    50: "#EFF6FF",
-    100: "#DBEAFE",
-    200: "#BFDBFE",
-    300: "#93C5FD",
-    400: "#60A5FA",
-    500: "#3B82F6",
-    600: "#2563EB",
-    700: "#1D4ED8",
-    800: "#1E40AF",
-    900: "#1E3A8A",
     lightblue: "#00c6ff",
     darkblue: "#0072ff",
+    lightpurple: "#2b2236",
+    darkpurple: "#100818",
+    red: "#da3654",
+    darkgrey: "#3e4955",
+    orange: "#feac0e",
   },
 };
 
