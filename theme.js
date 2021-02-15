@@ -13,7 +13,7 @@ const fonts = {
 const styles = {
   global: (props) => ({
     "html, body": {
-      bg: props.colorMode === "dark" ? "brand.darkpurple" : "white",
+      bg: props.colorMode === "dark" ? "brand.purple900" : "white",
       lineHeight: "tall",
     },
     h1: {
@@ -29,8 +29,10 @@ const colors = {
   brand: {
     lightblue: "#00c6ff",
     darkblue: "#0072ff",
-    lightpurple: "#2b2236",
-    darkpurple: "#100818",
+    purple50: "#f0eefa",
+    purple500: "#2b2236",
+    purple700: "#1d1627",
+    purple900: "#100818",
     darkgrey: "#3e4955",
     red: "#da3654",
     orange: "#feac0e",

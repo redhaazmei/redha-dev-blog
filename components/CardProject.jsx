@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, useColorModeValue, SimpleGrid, Stack, Link, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, useColorModeValue, SimpleGrid, Stack, LinkBox, LinkOverlay } from "@chakra-ui/react";
 import { FiExternalLink } from "react-icons/fi";
 import projects from "data/projects";
 
@@ -8,7 +8,7 @@ const CardProject = () => {
       <SimpleGrid columns={[1, 2]} spacing="6">
         {projects.map((project) => {
           return (
-            <Box key={project.title} minH="8em" w="100%" bg={useColorModeValue("gray.200", "gray.900")} p="4" role="group">
+            <Box key={project.title} minH="8em" w="100%" bg={useColorModeValue("gray.50", "brand.purple700")} p="4" role="group">
               <Flex direction="row" mb="3">
                 <Box>
                   <Heading size="sm" _groupHover={{ color: "brand.red" }}>
