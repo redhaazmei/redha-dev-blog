@@ -13,7 +13,7 @@ const CardBlog = () => {
                 <Box pb="2">
                   <Link href={`/blog/${blog.slug}`}>
                     <LinkOverlay>
-                      <Heading size="sm" _groupHover={{ color: useColorModeValue("brand.darkblue", "brand.lightblue") }}>
+                      <Heading size="sm" _groupHover={{ color: "brand.red" }}>
                         {blog.title}
                       </Heading>
                       <Text fontSize="sm">{blog.description}</Text>
