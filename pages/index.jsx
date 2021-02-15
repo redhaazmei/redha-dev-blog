@@ -1,4 +1,3 @@
-import Layout from "components/Layout";
 import Author from "components/Author";
 import Project from "components/Project";
 import CustomHead from "components/CustomHead";
