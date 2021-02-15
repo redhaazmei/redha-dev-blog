@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Box, Flex, IconButton, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Stack, useColorMode } from "@chakra-ui/react";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const Navbar = () => {
