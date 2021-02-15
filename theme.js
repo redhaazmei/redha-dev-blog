@@ -31,8 +31,8 @@ const colors = {
     darkblue: "#0072ff",
     lightpurple: "#2b2236",
     darkpurple: "#100818",
-    red: "#da3654",
     darkgrey: "#3e4955",
+    red: "#da3654",
     orange: "#feac0e",
   },
 };
