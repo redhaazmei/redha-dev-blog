@@ -12,6 +12,19 @@ const fonts = {
 
 const styles = {
   global: (props) => ({
+    ".mdx-prose": {
+      h1: {
+        fontSize: "4xl",
+        fontWeight: "bold",
+      },
+      a: {
+        fontWeight: "bold",
+        color: "brand.red",
+        _hover: {
+          textDecoration: "underline",
+        },
+      },
+    },
     "html, body": {
       bg: props.colorMode === "dark" ? "brand.purple900" : "white",
       lineHeight: "tall",
@@ -20,7 +33,7 @@ const styles = {
       letterSpacing: "tight",
     },
     p: {
-      color: props.colorMode === "dark" ? "gray.400" : "gray.600",
+      color: props.colorMode === "dark" ? "gray.300" : "gray.600",
     },
   }),
 };
