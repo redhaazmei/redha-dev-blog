@@ -1,12 +1,14 @@
+import Head from "next/head";
 import Author from "components/Author";
 import Project from "components/Project";
-import CustomHead from "components/CustomHead";
 import Blog from "components/Blog";
 
 const Home = () => {
   return (
     <>
-      <CustomHead title="Redha Azmei" />
+      <Head>
+        <title>Redha Azmei</title>
+      </Head>
       <Author />
       <Project />
       <Blog />
