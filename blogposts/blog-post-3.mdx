@@ -1,99 +1,22 @@
 ---
-title: "Create a Dashboard with Next.js API Routes - Fetching Data with SWR"
-publishedAt: "2020-02-24"
-summary: "Learn how to fetch data with SWR, a React Hooks library which improves the developer experience of retrieving data."
-image: "/static/images/banner.png"
+title: "10 Days in Norway"
+publishedAt: "2017-07-15"
+summary: "Visualize my journey through the scenic lands of Norway with rich, stunning pictures and daily travel logs."
+image: "/static/images/10-days-in-norway/banner.png"
 ---
 
-> In this series, you will learn how to [create a dashboard](/dashboard) using Next.js API routes and integrate with third-party APIs.
+<Image alt={`Norway`} src={`/images/blog-post-3/banner.jpg`} width={1280} height={720} priority />
 
-## Overview
+## Why Norway?
 
-In the first three parts of the series, we learned how to fetch data from a variety of APIs.
-Now, we can consume this data visually to build our dashboard.
+A few years ago I stumbled onto a picture of the legendary [Trolltunga](https://www.visitnorway.com/places-to-go/fjord-norway/the-hardangerfjord-region/listings-hardanger-fjord/trolltunga/8625/) while browsing Instagram. I was captivated by its beauty and decided to add visiting Norway and trekking out to visit this abnormal rock structure to my bucket list. Since then, I had been keeping tabs on prices for flights to Oslo, Norway. In March 2017, I noticed that the round trip prices from Chicago to Oslo had significantly dropped due to a special sale. I contacted my friend Andrew asking if he would want to join, knowing he also had the same desire to explore and hike through Norway. Andrew was starting physical therapy school at the end of summer and would soon have limited free time (and a limited budget) so this was the perfect opportunity to take the trip of a lifetime with one of my best friends. We also invited Andrew’s friend JD who I'd not met but had heard great things about. I checked my work schedule and PTO balance and took the plunge - I purchased my plane ticket and committed to the adventure. The three of us were ecstatic and hungry for an unforgettable experience. Throughout the next two months, we planned out our trip determining where to stay, what to visit, and how to most effectively use our time. You'll find my daily travel logs below. Enjoy!
 
-## SWR
+---
 
-[SWR](https://swr.now.sh/) is a React Hooks library for remote data fetching.
-SWR first returns the data from cache (stale), then sends the fetch request (revalidate), and finally comes with the up-to-date data again.
+## May 15th, 2017
 
-This is important for our dashboard page because it can be left open and the data will remain fresh.
-If you re-focus or switch between tabs, SWR will [automatically revalidate data](https://swr.now.sh/#focus-revalidation).
+I could hardly sleep the night before we departed for Chicago. I kept envisioning what things might look like based on pictures I’d seen and mentally walking through all the places we’d soon visit. That afternoon we left for Chicago and caught a late flight to Stockholm allowing us to sleep throughout the night. As we arrived in Stockholm, we noticed some extremely long lines at customs which were holding all passengers of our connecting flight to Oslo up. Our flight ended up getting delayed a tad to allow everyone to make it through customs in time. Nevertheless, we boarded our small puddle jumper plane for the one-hour flight to Oslo. From the Oslo airport, we took another flight up to Bodø. In the airport, we realized that Andrew had apparently lost his wallet somewhere between airport transfers. After about an hour of searching and contacting the airports, we declared it a loss and moved on – the first bump in the road on this trip. We had about 5 hours to kill until our ferry to the [Lofoten Islands](https://www.visitnorway.com/places-to-go/northern-norway/the-lofoten-islands/), so we ventured out into the city and explored the downtown area as well as the pier. Shortly after, we (attempted) to find the ferry which turned into a long process. We eventually found the ferry boarding room - a small, almost empty building out by the water. There was only one other person inside, which made sense because our ferry was at 12:15 am – not exactly ideal. The next ferry wasn’t until 7 pm the next day, so it was really our only option. As our boarding time finally rolled around, we walked outside to find a massive ferry. The ferry’s main purpose was to transport cars out to the islands and wasn't necessarily intended for passengers. We watched a variety of semis and smaller cars drive up into the bay of the ship. There were only about five total passengers on the ferry. Finally, we embarked on the three and a half hour trip out to Moskenes.
 
-To use SWR, we can import the hook and define which route to fetch.
+<Image alt={`Moskenes Ferry`} src={`/images/blog-post-3/ferry.jpg`} width={1280} height={720} />
 
-```js
-import useSWR from "swr";
-
-const { data } = useSWR("/api/unsplash", fetcher);
-```
-
-`fetcher` is a small wrapper around `fetch` returning `json`.
-
-```js
-export default async function (...args) {
-  const res = await fetch(...args);
-
-  return res.json();
-}
-```
-
-`data` will contain the JSON response from our API route.
-
-```json
-// /api/unsplash
-
-{
-  "downloads": 7995,
-  "views": 1134429
-}
-```
-
-## Consuming the Data
-
-Now that you have access to the data from the route, you can build a UI to consume the data.
-I've chosen to create "cards" for each metric.
-
-```js:components/metrics/Unsplash.js
-import React from 'react';
-import useSWR from 'swr';
-import format from 'comma-number';
-
-import fetcher from '../../lib/fetcher';
-
-import MetricCard from './card';
-
-function Unsplash() {
-  const { data } = useSWR('/api/unsplash', fetcher);
-
-  const downloads = format(data?.downloads);
-  const views = format(data?.views);
-  const link = 'https://unsplash.com/@leerob';
-
-  return (
-    <>
-      <MetricCard header="Unsplash Downloads" link={link} metric={downloads} />
-      <MetricCard header="Unsplash Views" link={link} metric={views} />
-    </>
-  );
-}
-
-export default Unsplash;
-```
-
-_Note_: The `MetricCard` source code is [here](https://github.com/leerob/leerob.io/blob/master/components/metrics/Card.js).
-
-## Example
-
-The two cards below talk to `/api/unsplash` and pull back stats about my Unsplash account.
-
-## Conclusion
-
-This concludes my series on creating a dashboard with Next.js API routes. If you missed the previous posts, they are linked below.
-
-**Create a Dashboard with Next.js API Routes**
-
-- Part 1 - [Unsplash API](/blog/unsplash-api-nextjs)
-- Part 2 - [YouTube API](/blog/youtube-api-nextjs)
-- Part 3 - [Google Analytics API](/blog/google-analytics-api-nextjs)
-- Part 4 - [Fetching Data with SWR](/blog/fetching-data-with-swr)
+---
