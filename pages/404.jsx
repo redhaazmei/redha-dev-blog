@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { gradientLeft, gradientRight } from "components/Gradient";
-import { Button, Flex, Heading, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import Head from "next/head";
+import { Button, Flex, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import { FiHome } from "react-icons/fi";
-import CustomHead from "components/CustomHead";
 
 const Home = () => {
   return (
     <>
-      <CustomHead title="404 | Redha Azmei" />
+      <Head>
+        <title>Page Not Found | 404</title>
+      </Head>
       <Flex justify="center" mb="4">
         <Flex textAlign="center" maxW="2xl" direction="column" align="center" justify="center">
           <Heading as="h1" size="4xl">
