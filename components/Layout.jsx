@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       <Flex justify="center">
         <Box maxW="5xl" w="100%" mt="5" mx="8">
           <Navbar />
-          <Box maxW="4xl" w="100%" mx="auto">
+          <Box maxW={["19em", "30em", "40em", "50em", "4xl"]} w="100%" mx="auto">
             {children}
           </Box>
           <Footer />
