@@ -12,11 +12,9 @@ const Blog = ({ source, frontmatter }) => {
   return (
     <>
       <Head>
-        <title>{frontmatter.title}</title>
+        <title>{frontmatter.title} | Redha Azmei</title>
       </Head>
-      <MDXWrapper>
-        <div>{content}</div>
-      </MDXWrapper>
+      <MDXWrapper>{content}</MDXWrapper>
     </>
   );
 };
