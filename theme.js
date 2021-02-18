@@ -14,7 +14,15 @@ const styles = {
   global: (props) => ({
     ".mdx-prose": {
       h1: {
-        fontSize: "4xl",
+        fontSize: "3xl",
+        fontWeight: "bold",
+      },
+      h2: {
+        fontSize: "2xl",
+        fontWeight: "bold",
+      },
+      h3: {
+        fontSize: "xl",
         fontWeight: "bold",
       },
       a: {
@@ -23,6 +31,17 @@ const styles = {
         _hover: {
           textDecoration: "underline",
         },
+      },
+      code: {
+        fontSize: "0.8rem",
+        whiteSpace: "pre",
+      },
+      pre: {
+        bg: props.colorMode === "dark" ? "brand.purple700" : "gray.50",
+        border: "1px",
+        borderColor: "gray.100",
+        p: "4",
+        overflow: "auto",
       },
     },
     "html, body": {
@@ -33,7 +52,10 @@ const styles = {
       letterSpacing: "tight",
     },
     p: {
-      color: props.colorMode === "dark" ? "gray.300" : "gray.600",
+      color: props.colorMode === "dark" ? "brand.text50" : "gray.600",
+    },
+    strong: {
+      color: props.colorMode === "dark" ? "white" : "black",
     },
   }),
 };
@@ -46,7 +68,7 @@ const colors = {
     purple500: "#2b2236",
     purple700: "#1d1627",
     purple900: "#100818",
-    darkgrey: "#3e4955",
+    text50: "#aba9ae",
     red: "#da3654",
     orange: "#feac0e",
   },
