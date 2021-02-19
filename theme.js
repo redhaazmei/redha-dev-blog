@@ -1,7 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const config = {
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useSystemColorMode: false,
 };
 
@@ -16,10 +16,13 @@ const styles = {
       h1: {
         fontSize: ["2xl", "3xl"],
         fontWeight: "bold",
+        mb: "2",
       },
       h2: {
         fontSize: ["xl", "2xl"],
         fontWeight: "bold",
+        letterSpacing: "tight",
+        mb: "2",
         "& code": {
           fontSize: "1rem",
           fontWeight: "bold",
@@ -28,22 +31,24 @@ const styles = {
       h3: {
         fontSize: ["lg", "xl"],
         fontWeight: "bold",
+        mb: "2",
       },
       p: {
-        mb: "6",
+        mb: "8",
       },
       a: {
         fontWeight: "bold",
         color: "brand.red",
+        textDecoration: "underline",
         _hover: {
-          textDecoration: "underline",
+          color: "brand.red100",
         },
       },
       pre: {
         bg: props.colorMode === "dark" ? "brand.purple700" : "gray.900",
         px: "4",
-        pt: "3",
-        mb: "6",
+        pb: "1",
+        mb: "8",
         overflow: "auto",
       },
       code: {
@@ -57,13 +62,20 @@ const styles = {
         borderRadius: "md",
       },
       ul: {
-        listStyle: "inside",
+        listStylePosition: "outside",
+        pl: "5",
+        mb: "8",
       },
       ol: {
-        listStyle: "inside",
+        listStylePosition: "outside",
+        mb: "8",
+      },
+      li: {
+        pl: "1",
+        mb: "3",
       },
       hr: {
-        mb: "6",
+        mb: "8",
       },
     },
     "html, body": {
@@ -73,7 +85,7 @@ const styles = {
     h1: {
       letterSpacing: "tight",
     },
-    p: {
+    "p, ul, ol, li": {
       color: props.colorMode === "dark" ? "brand.text50" : "gray.600",
     },
     strong: {
