@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, useBreakpointValue } from "@chakra-ui/react";
 
 const config = {
   initialColorMode: "light",
@@ -14,16 +14,23 @@ const styles = {
   global: (props) => ({
     ".mdx-prose": {
       h1: {
-        fontSize: "3xl",
+        fontSize: ["2xl", "3xl"],
         fontWeight: "bold",
       },
       h2: {
-        fontSize: "2xl",
+        fontSize: ["xl", "2xl"],
         fontWeight: "bold",
+        "& code": {
+          fontSize: "1rem",
+          fontWeight: "bold",
+        },
       },
       h3: {
-        fontSize: "xl",
+        fontSize: ["lg", "xl"],
         fontWeight: "bold",
+      },
+      p: {
+        mb: "6",
       },
       a: {
         fontWeight: "bold",
@@ -33,15 +40,36 @@ const styles = {
         },
       },
       code: {
+        px: "1",
         fontSize: "0.8rem",
-        whiteSpace: "pre",
+        fontWeight: "normal",
+        color: props.colorMode === "dark" ? "white" : "black",
+        bg: props.colorMode === "dark" ? "brand.purple500" : "gray.100",
+        border: "1px solid",
+        borderColor: props.colorMode === "dark" ? "brand.purple700" : "gray.100",
+        borderRadius: "md",
       },
       pre: {
-        bg: props.colorMode === "dark" ? "brand.purple700" : "gray.50",
-        border: "1px",
-        borderColor: "gray.100",
         p: "4",
+        mb: "6",
+        bg: props.colorMode === "dark" ? "brand.purple700" : "gray.50",
         overflow: "auto",
+        "& code": {
+          fontSize: "0.8rem",
+          fontWeight: "normal",
+          whitespace: "pre",
+          bg: "none",
+          border: "none",
+        },
+      },
+      ul: {
+        listStyle: "inside",
+      },
+      ol: {
+        listStyle: "inside",
+      },
+      hr: {
+        mb: "6",
       },
     },
     "html, body": {
@@ -62,8 +90,6 @@ const styles = {
 
 const colors = {
   brand: {
-    lightblue: "#00c6ff",
-    darkblue: "#0072ff",
     purple50: "#f0eefa",
     purple500: "#2b2236",
     purple700: "#1d1627",
