@@ -1,4 +1,4 @@
-import { extendTheme, useBreakpointValue } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 
 const config = {
   initialColorMode: "light",
@@ -39,6 +39,13 @@ const styles = {
           textDecoration: "underline",
         },
       },
+      pre: {
+        bg: props.colorMode === "dark" ? "brand.purple700" : "gray.900",
+        px: "4",
+        pt: "3",
+        mb: "6",
+        overflow: "auto",
+      },
       code: {
         px: "1",
         fontSize: "0.8rem",
@@ -48,19 +55,6 @@ const styles = {
         border: "1px solid",
         borderColor: props.colorMode === "dark" ? "brand.purple700" : "gray.100",
         borderRadius: "md",
-      },
-      pre: {
-        p: "4",
-        mb: "6",
-        bg: props.colorMode === "dark" ? "brand.purple700" : "gray.50",
-        overflow: "auto",
-        "& code": {
-          fontSize: "0.8rem",
-          fontWeight: "normal",
-          whitespace: "pre",
-          bg: "none",
-          border: "none",
-        },
       },
       ul: {
         listStyle: "inside",
@@ -96,6 +90,7 @@ const colors = {
     purple900: "#100818",
     text50: "#aba9ae",
     red: "#da3654",
+    red100: "#b3213c",
     orange: "#feac0e",
   },
 };
