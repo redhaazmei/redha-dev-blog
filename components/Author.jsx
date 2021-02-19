@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
 
 const Author = () => {
   return (
