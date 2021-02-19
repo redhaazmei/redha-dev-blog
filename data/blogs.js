@@ -20,6 +20,13 @@ const blogs = [
     description: "This is an example of description of blog post number 3",
     date: "11 February 2021",
   },
+  {
+    id: 4,
+    title: "Blog Post 4",
+    slug: "blog-post-4",
+    description: "This is an example of description of blog post number 4",
+    date: "19 February 2021",
+  },
 ];
 
 export default blogs;
