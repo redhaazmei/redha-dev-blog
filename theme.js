@@ -49,7 +49,6 @@ const styles = {
         px: "4",
         pb: "1",
         mb: "8",
-        overflow: "scroll",
       },
       code: {
         px: "1",
