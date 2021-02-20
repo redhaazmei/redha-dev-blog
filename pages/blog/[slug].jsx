@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import readingTime from "reading-time";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
 import Head from "next/head";
@@ -8,14 +9,15 @@ import MDXWrapper from "components/MDXWrapper";
 import MDXComponents from "components/MDXComponents";
 import BlogTitle from "components/BlogTitle";
 
-const Blog = ({ source, frontmatter }) => {
+const Blog = ({ source, frontmatter, mdxtext }) => {
   const content = hydrate(source, { components: MDXComponents });
+  const stats = readingTime(mdxtext);
   return (
     <>
       <Head>
         <title>{frontmatter.title} | Redha Azmei</title>
       </Head>
-      <BlogTitle title={frontmatter.title} date={frontmatter.date} />
+      <BlogTitle title={frontmatter.title} date={frontmatter.date} readtime={stats.text} category={frontmatter.category} />
       <MDXWrapper>{content}</MDXWrapper>
     </>
   );
@@ -43,6 +45,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     props: {
       source: mdxSource,
       frontmatter: data,
+      mdxtext: content,
     },
   };
 };
