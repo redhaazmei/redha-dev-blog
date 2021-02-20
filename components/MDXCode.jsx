@@ -21,7 +21,7 @@ const MDXCode = ({ children, className }) => {
       </Flex>
       <Highlight {...defaultProps} theme={nightOwl} code={children} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={{ ...style, fontSize: "0.8rem", overflow: "scroll", background: "none", marginBottom: 0, padding: 0 }}>
+          <pre className={className} style={{ ...style, fontSize: "0.8rem", overflow: "scroll", whiteSpace: "pre", background: "none", marginBottom: 0, padding: 0 }}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
