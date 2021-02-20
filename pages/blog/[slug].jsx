@@ -6,6 +6,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import Head from "next/head";
 import MDXWrapper from "components/MDXWrapper";
 import MDXComponents from "components/MDXComponents";
+import BlogTitle from "components/BlogTitle";
 
 const Blog = ({ source, frontmatter }) => {
   const content = hydrate(source, { components: MDXComponents });
@@ -14,6 +15,7 @@ const Blog = ({ source, frontmatter }) => {
       <Head>
         <title>{frontmatter.title} | Redha Azmei</title>
       </Head>
+      <BlogTitle title={frontmatter.title} date={frontmatter.date} />
       <MDXWrapper>{content}</MDXWrapper>
     </>
   );
