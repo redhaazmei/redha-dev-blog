@@ -62,6 +62,11 @@ const styles = {
         borderColor: props.colorMode === "dark" ? "brand.purple700" : "gray.100",
         borderRadius: "md",
       },
+      blockquote: {
+        "& p": {
+          mb: "0",
+        },
+      },
       ul: {
         listStylePosition: "outside",
         pl: "5",
