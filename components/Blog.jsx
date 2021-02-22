@@ -1,5 +1,6 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import CardBlog from "./CardBlog";
+import CardBlog2 from "./CardBlog2";
 
 const Blog = () => {
   return (
@@ -9,6 +10,7 @@ const Blog = () => {
           <Heading letterSpacing="tight">Blog</Heading>
           <Text>Documenting stuffs that I find interesting</Text>
         </Box>
+        <CardBlog2 />
         <CardBlog />
       </Box>
     </>
