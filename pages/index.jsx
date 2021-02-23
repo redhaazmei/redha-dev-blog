@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Author from "components/Author";
 import Project from "components/Project";
-import Blog from "components/Blog";
+import SectionBlog from "components/SectionBlog";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       </Head>
       <Author />
       <Project />
-      <Blog />
+      <SectionBlog />
     </>
   );
 };
