@@ -4,7 +4,7 @@ import { Badge, Box, Stack, Heading, Text } from "@chakra-ui/react";
 const BlogTitle = ({ title, date, readtime, category, image }) => {
   return (
     <>
-      <Box mb="12">
+      <Box mb="8">
         <Heading fontSize={["4xl", "6xl"]} mb="3">
           {title}
         </Heading>
