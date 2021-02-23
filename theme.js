@@ -14,17 +14,17 @@ const styles = {
   global: (props) => ({
     ".mdx-prose": {
       h1: {
-        fontSize: ["2xl", "3xl"],
+        fontSize: ["3xl", "4xl"],
         fontWeight: "bold",
         mb: "2",
       },
       h2: {
-        fontSize: ["xl", "2xl"],
+        fontSize: ["2xl", "3xl"],
         fontWeight: "bold",
         letterSpacing: "tight",
         mb: "2",
         "& code": {
-          fontSize: "1rem",
+          fontSize: "1.2rem",
           fontWeight: "bold",
         },
       },
