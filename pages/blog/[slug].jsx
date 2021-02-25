@@ -17,7 +17,7 @@ const Blog = ({ source, frontmatter, mdxtext }) => {
       <Head>
         <title>{frontmatter.title} | Redha Azmei</title>
       </Head>
-      <BlogTitle title={frontmatter.title} date={frontmatter.date} readtime={stats.text} category={frontmatter.category} image={frontmatter.image} />
+      <BlogTitle title={frontmatter.title} date={frontmatter.date} readtime={stats.text} category={frontmatter.category} />
       <MDXWrapper>{content}</MDXWrapper>
     </>
   );

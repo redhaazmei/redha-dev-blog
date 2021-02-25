@@ -1,16 +1,13 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import readingTime from "reading-time";
 import { useState } from "react";
 import Head from "next/head";
+import { getposts } from "lib/getposts";
 import { Box, Heading, Input, InputGroup, InputRightElement, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react";
 import { FiSearch } from "react-icons/fi";
 import BlogCard from "components/BlogCard";
 
-const Blog = ({ getAllBlogs }) => {
+const Blog = ({ posts }) => {
   const [search, setSearch] = useState("");
-  const filteredposts = getAllBlogs.sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))).filter((post) => post.title.toLowerCase().includes(search.toLowerCase()));
+  const filteredposts = posts.sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))).filter((post) => post.title.toLowerCase().includes(search.toLowerCase()));
   return (
     <>
       <Head>
@@ -20,7 +17,7 @@ const Blog = ({ getAllBlogs }) => {
         <Heading as="h1" fontSize={["2xl", "5xl"]} mb="2">
           Blog
         </Heading>
-        <Text pb="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus architecto accusamus, dolore porro non, mollitia nemo delectus corporis, sapiente maxime vero possimus necessitatibus veritatis ipsum impedit maiores voluptas hic nihil.</Text>
+        <Text pb="4">Writing is a great way for me to document and share my thoughts, especially on the techs I learned and projects I built. Use the search below to find your favourite articles.</Text>
         <InputGroup>
           <Input placeholder="Search Blog" bg={useColorModeValue("gray.50", "brand.purple700")} focusBorderColor="brand.red" onChange={(e) => setSearch(e.target.value)} />
           <InputRightElement children={<FiSearch />} />
@@ -37,18 +34,9 @@ const Blog = ({ getAllBlogs }) => {
 };
 
 export const getStaticProps = async () => {
-  const filenames = fs.readdirSync("blogposts");
-  const getAllBlogs = filenames.map((filename) => {
-    const slug = filename.replace(".mdx", "");
-    const blog = fs.readFileSync(path.join("blogposts", slug + ".mdx"), "utf8");
-    const { content, data } = matter(blog);
-    const stats = readingTime(content);
-    const readtime = stats.text;
-    const frontmatter = { ...data, slug: slug, readtime: readtime };
-    return frontmatter;
-  });
+  const posts = getposts();
   return {
-    props: { getAllBlogs },
+    props: { posts },
   };
 };
 
