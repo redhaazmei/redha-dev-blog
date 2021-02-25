@@ -4,7 +4,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const links = ["Home", "About", "Blog", "Projects"];
+  const links = ["Home", "Blog", "Projects"];
 
   return (
     <>
