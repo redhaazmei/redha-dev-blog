@@ -1,9 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { LinkBox, LinkOverlay, Box, Heading, Text, useColorModeValue, Badge } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { LinkBox, LinkOverlay, Box, Heading, Text, useColorModeValue, Badge, forwardRef } from "@chakra-ui/react";
+import { motion, isValidMotionProp } from "framer-motion";
 
-const MotionBox = motion.custom(LinkBox);
+const MotionBox = motion.custom(
+  forwardRef((props, ref) => {
+    const chakraProps = Object.fromEntries(Object.entries(props).filter(([key]) => !isValidMotionProp(key)));
+    return <LinkBox ref={ref} {...chakraProps} />;
+  })
+);
 
 const BlogCard = ({ title, date, description, category, image, readtime, slug }) => {
   return (
