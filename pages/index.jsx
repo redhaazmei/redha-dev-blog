@@ -20,7 +20,7 @@ const Home = ({ posts }) => {
       <SectionLayout heading="Latest Posts" text="I write about stuffs that I find interesting.">
         <SimpleGrid columns={[1, 2]} spacing="8" mb="6">
           {filteredposts.map((post) => {
-            return <BlogCard id={post.title} title={post.title} date={post.date} description={post.description} category={post.category} image={post.image} slug={post.slug} readtime={post.readtime} />;
+            return <BlogCard key={post.title} title={post.title} date={post.date} description={post.description} category={post.category} image={post.image} slug={post.slug} readtime={post.readtime} />;
           })}
         </SimpleGrid>
       </SectionLayout>

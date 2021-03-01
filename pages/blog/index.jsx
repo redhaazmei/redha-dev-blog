@@ -26,7 +26,7 @@ const Blog = ({ posts }) => {
       {!filteredposts.length && <Text>No post matches the given query.</Text>}
       <SimpleGrid columns={[1, 2, 2, 3]} spacing="8" mb="6">
         {filteredposts.map((post) => {
-          return <BlogCard id={post.title} title={post.title} date={post.date} description={post.description} category={post.category} image={post.image} slug={post.slug} readtime={post.readtime} />;
+          return <BlogCard key={post.title} title={post.title} date={post.date} description={post.description} category={post.category} image={post.image} slug={post.slug} readtime={post.readtime} />;
         })}
       </SimpleGrid>
     </>
