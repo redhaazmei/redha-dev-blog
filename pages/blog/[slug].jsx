@@ -4,19 +4,36 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
-import Head from "next/head";
+import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 import MDXWrapper from "components/MDXWrapper";
 import MDXComponents from "components/MDXComponents";
 import BlogTitle from "components/BlogTitle";
 
 const Blog = ({ source, frontmatter, mdxtext }) => {
+  const router = useRouter();
   const content = hydrate(source, { components: MDXComponents });
   const stats = readingTime(mdxtext);
   return (
     <>
-      <Head>
-        <title>{frontmatter.title} | Redha Azmei</title>
-      </Head>
+      <NextSeo
+        title={`${frontmatter.title} | Redha Azmei`}
+        description={frontmatter.title}
+        openGraph={{
+          url: `${router.pathname}`,
+          title: `${frontmatter.title}`,
+          description: `${frontmatter.title}`,
+          images: [
+            {
+              url: `${frontmatter.image}`,
+              width: 1200,
+              height: 630,
+              alt: `${frontmatter.title}`,
+            },
+          ],
+          site_name: "redha.dev | Redha Azmei",
+        }}
+      />
       <BlogTitle title={frontmatter.title} date={frontmatter.date} readtime={stats.text} category={frontmatter.category} />
       <MDXWrapper>{content}</MDXWrapper>
     </>
