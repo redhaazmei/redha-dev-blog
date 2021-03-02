@@ -8,7 +8,6 @@ import BlogCard from "components/BlogCard";
 
 const Home = ({ posts }) => {
   const filteredposts = posts.sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))).slice(0, 2);
-  const postcount = posts.length;
   return (
     <>
       <Head>

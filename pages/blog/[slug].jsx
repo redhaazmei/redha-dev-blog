@@ -4,14 +4,12 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
-import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import MDXWrapper from "components/MDXWrapper";
 import MDXComponents from "components/MDXComponents";
 import BlogTitle from "components/BlogTitle";
 
-const Blog = ({ source, frontmatter, mdxtext }) => {
-  const router = useRouter();
+const Blog = ({ source, frontmatter, mdxtext, ogurl }) => {
   const content = hydrate(source, { components: MDXComponents });
   const stats = readingTime(mdxtext);
   return (
@@ -20,7 +18,7 @@ const Blog = ({ source, frontmatter, mdxtext }) => {
         title={`${frontmatter.title} | Redha Azmei`}
         description={frontmatter.title}
         openGraph={{
-          url: `${router.pathname}`,
+          url: `https://redha.dev/blog/${ogurl}`,
           title: `${frontmatter.title}`,
           description: `${frontmatter.description}`,
           images: [
@@ -67,6 +65,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       source: mdxSource,
       frontmatter: data,
       mdxtext: content,
+      ogurl: slug,
     },
   };
 };
