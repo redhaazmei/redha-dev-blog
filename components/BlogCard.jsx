@@ -13,7 +13,7 @@ const MotionBox = motion.custom(
 const BlogCard = ({ title, date, description, category, image, readtime, slug }) => {
   return (
     <>
-      <MotionBox bg={useColorModeValue("gray.50", "brand.purple700")} borderRadius="lg" border="solid" borderWidth="1px" borderColor={useColorModeValue("gray.100", "brand.purple700")} overflow="hidden" role="group" _hover={{ cursor: "pointer" }} whileHover={{ scale: 1.02 }} whileTap={{ scale: 1.03 }}>
+      <MotionBox bg={useColorModeValue("gray.50", "brand.purple700")} borderRadius="lg" border="solid" borderWidth="1px" borderColor={useColorModeValue("gray.100", "brand.purple700")} overflow="hidden" role="group" _hover={{ cursor: "pointer" }} whileHover={{ scale: 1.03 }} whileTap={{ scale: 1.04 }}>
         <Image alt={"Banner"} src={image} width={1200} height={630} />
         <Box pt="2" px="6" pb="3">
           <Badge colorScheme={category === "Web Development" ? "blue" : category === "Data Science" ? "green" : category === "ML/AI" ? "purple" : "red"}>{category}</Badge>
