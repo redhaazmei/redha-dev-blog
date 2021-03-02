@@ -22,7 +22,7 @@ const Blog = ({ source, frontmatter, mdxtext }) => {
         openGraph={{
           url: `${router.pathname}`,
           title: `${frontmatter.title}`,
-          description: `${frontmatter.title}`,
+          description: `${frontmatter.description}`,
           images: [
             {
               url: `https://redha.dev${frontmatter.image}`,
