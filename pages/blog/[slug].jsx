@@ -25,13 +25,17 @@ const Blog = ({ source, frontmatter, mdxtext }) => {
           description: `${frontmatter.title}`,
           images: [
             {
-              url: `${frontmatter.image}`,
+              url: `https://redha.dev${frontmatter.image}`,
               width: 1200,
               height: 630,
               alt: `${frontmatter.title}`,
             },
           ],
           site_name: "redha.dev | Redha Azmei",
+        }}
+        twitter={{
+          handle: "@redhaazmei",
+          cardType: "summary_large_image",
         }}
       />
       <BlogTitle title={frontmatter.title} date={frontmatter.date} readtime={stats.text} category={frontmatter.category} />
