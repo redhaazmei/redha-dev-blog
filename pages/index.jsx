@@ -12,11 +12,11 @@ const Home = ({ posts }) => {
     <>
       <NextSeo
         title="Redha Azmei"
-        description="A Data Scientist with deep interest in ML, AI and modern Web Technologies. Currently working in the aviation industry based in Malaysia 🇲🇾. Welcome to my personal space where I share all my thoughts on techs."
+        description="Hi, I'm Redha Azmei 👋. Welcome to my personal space where I share all my thoughts on techs."
         openGraph={{
           url: "https://redha.dev",
           title: "redha.dev | Redha Azmei",
-          description: "A Data Scientist with deep interest in ML, AI and modern Web Technologies. Currently working in the aviation industry based in Malaysia 🇲🇾. Welcome to my personal space where I share all my thoughts on techs.",
+          description: "Hi, I'm Redha Azmei 👋. Welcome to my personal space where I share all my thoughts on techs.",
           images: [
             {
               url: "https://redha.dev/images/redha.dev-banner.png",
