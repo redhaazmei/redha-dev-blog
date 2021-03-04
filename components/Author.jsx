@@ -4,10 +4,10 @@ const Author = () => {
   return (
     <>
       <Box mb="16">
-        <Heading as="h1" fontSize={["2xl", "5xl"]} mb="2">
+        <Heading as="h1" fontSize={["3xl", "5xl"]} mb="2">
           Hi, I'm Redha Azmei 👋
         </Heading>
-        <Text>I am a Data Scientist with deep interest in ML, AI and modern Web Technologies. I am currently working in the aviation industry based in Malaysia 🇲🇾. Addicted to learning and building techs.</Text>
+        <Text>A Data Scientist with deep interest in ML, AI and modern Web Technologies. Currently working in the aviation industry based in Malaysia 🇲🇾. Welcome to my personal space where I share all my thoughts on techs.</Text>
       </Box>
     </>
   );
