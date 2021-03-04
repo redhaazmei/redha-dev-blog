@@ -6,8 +6,8 @@ const config = {
 };
 
 const fonts = {
-  heading: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-  body: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  heading: "'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  body: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
 };
 
 const styles = {
@@ -15,13 +15,14 @@ const styles = {
     ".mdx-prose": {
       h1: {
         fontSize: ["3xl", "4xl"],
+        fontFamily: "heading",
         fontWeight: "bold",
         mb: "2",
       },
       h2: {
         fontSize: ["2xl", "3xl"],
+        fontFamily: "heading",
         fontWeight: "bold",
-        letterSpacing: "tight",
         mb: "2",
         "& code": {
           fontSize: "1.2rem",
@@ -30,6 +31,7 @@ const styles = {
       },
       h3: {
         fontSize: ["lg", "xl"],
+        fontFamily: "heading",
         fontWeight: "bold",
         mb: "2",
       },
