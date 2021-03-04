@@ -2,18 +2,18 @@ import { Global } from "@emotion/react";
 
 const fontlist = `
   @font-face {
-    font-family: 'Barlow';
+    font-family: 'DM Sans';
     font-style: bold;
     font-weight: 700;
     font-display: optional;
-    src: url(/fonts/Barlow-Bold.ttf);
+    src: url(/fonts/DMSans-Bold.ttf);
   }
   @font-face {
-    font-family: 'Inter';
+    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
     font-display: optional;
-    src: url(/fonts/Inter-Regular.ttf);
+    src: url(/fonts/DMSans-Regular.ttf);
   }
 `;
 

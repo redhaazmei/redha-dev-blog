@@ -1,13 +1,13 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const config = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
 };
 
 const fonts = {
-  heading: "'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-  body: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  heading: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  body: "'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
 };
 
 const styles = {
@@ -54,12 +54,13 @@ const styles = {
       },
       code: {
         px: "1",
-        fontSize: "0.8rem",
+        py: "0.1rem",
+        fontSize: "0.9rem",
         fontWeight: "normal",
         color: props.colorMode === "dark" ? "white" : "black",
         bg: props.colorMode === "dark" ? "brand.purple500" : "gray.100",
         border: "1px solid",
-        borderColor: props.colorMode === "dark" ? "brand.purple700" : "gray.100",
+        borderColor: props.colorMode === "dark" ? "brand.purple500" : "gray.300",
         borderRadius: "md",
       },
       blockquote: {
